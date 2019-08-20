@@ -16,5 +16,30 @@ namespace UsinagemPecas
         {
             InitializeComponent();
         }
+
+        private void BtnPecaUm_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnPecaDois_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnPecaTres_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnPecaQuatro_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnPecaCinco_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
