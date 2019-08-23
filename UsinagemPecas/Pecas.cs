@@ -9,7 +9,7 @@ namespace UsinagemPecas
 {
     class Pecas
     {
-        public Pecas(int codigo, string peca, DateTime dataInicio, DateTime dataTermino)
+        public Pecas(int codigo, string peca, string dataInicio, string dataTermino)
         {
             Codigo = codigo;
             Peca = peca;
@@ -23,10 +23,10 @@ namespace UsinagemPecas
         public string Peca { get; set; }
 
         [DisplayName("Data Ínicio")]
-        public DateTime DataInicio { get; set; }
+        public string DataInicio { get; set; }
 
         [DisplayName("Data Termino")]
-        public DateTime DataTermino { get; set; }
+        public string DataTermino { get; set; }
 
     }
 }

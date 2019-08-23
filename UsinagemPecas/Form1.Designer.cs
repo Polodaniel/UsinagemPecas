@@ -36,24 +36,31 @@
             this.btnPecaCinco = new System.Windows.Forms.Button();
             this.lblPecasProntas = new System.Windows.Forms.Label();
             this.pnlPecas = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.btnSair = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnlDivisoria1 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.pnlTitulo = new System.Windows.Forms.Panel();
             this.lblPecas = new System.Windows.Forms.Label();
             this.pnlConcluido = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
             this.dgvPecas = new System.Windows.Forms.DataGridView();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.panel9 = new System.Windows.Forms.Panel();
             this.btnLimpar = new System.Windows.Forms.Button();
-            this.panel6 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.pnlPecas.SuspendLayout();
             this.pnlTitulo.SuspendLayout();
             this.pnlConcluido.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPecas)).BeginInit();
+            this.panel7.SuspendLayout();
+            this.panel8.SuspendLayout();
+            this.panel9.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnPecaUm
@@ -144,7 +151,7 @@
             // pnlPecas
             // 
             this.pnlPecas.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.pnlPecas.Controls.Add(this.btnLimpar);
+            this.pnlPecas.Controls.Add(this.panel7);
             this.pnlPecas.Controls.Add(this.panel6);
             this.pnlPecas.Controls.Add(this.btnSair);
             this.pnlPecas.Controls.Add(this.btnPecaCinco);
@@ -164,6 +171,14 @@
             this.pnlPecas.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.pnlPecas.Size = new System.Drawing.Size(148, 450);
             this.pnlPecas.TabIndex = 8;
+            // 
+            // panel6
+            // 
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel6.Location = new System.Drawing.Point(0, 284);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(148, 3);
+            this.panel6.TabIndex = 15;
             // 
             // btnSair
             // 
@@ -212,6 +227,14 @@
             this.pnlDivisoria1.Size = new System.Drawing.Size(148, 3);
             this.pnlDivisoria1.TabIndex = 8;
             // 
+            // panel5
+            // 
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel5.Location = new System.Drawing.Point(0, 44);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(148, 3);
+            this.panel5.TabIndex = 13;
+            // 
             // pnlTitulo
             // 
             this.pnlTitulo.BackColor = System.Drawing.Color.SteelBlue;
@@ -254,14 +277,6 @@
             this.panel4.Size = new System.Drawing.Size(652, 39);
             this.panel4.TabIndex = 8;
             // 
-            // panel5
-            // 
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(0, 44);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(148, 3);
-            this.panel5.TabIndex = 13;
-            // 
             // dgvPecas
             // 
             this.dgvPecas.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
@@ -284,6 +299,34 @@
             this.dgvPecas.Size = new System.Drawing.Size(640, 400);
             this.dgvPecas.TabIndex = 5;
             // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.panel9);
+            this.panel7.Controls.Add(this.panel8);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel7.Location = new System.Drawing.Point(0, 287);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(148, 48);
+            this.panel7.TabIndex = 9;
+            // 
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.btnLimpar);
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel8.Location = new System.Drawing.Point(0, 0);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(73, 48);
+            this.panel8.TabIndex = 10;
+            // 
+            // panel9
+            // 
+            this.panel9.Controls.Add(this.button1);
+            this.panel9.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel9.Location = new System.Drawing.Point(75, 0);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(73, 48);
+            this.panel9.TabIndex = 11;
+            // 
             // btnLimpar
             // 
             this.btnLimpar.BackColor = System.Drawing.Color.LightBlue;
@@ -291,21 +334,28 @@
             this.btnLimpar.FlatAppearance.BorderSize = 0;
             this.btnLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpar.Font = new System.Drawing.Font("Yu Gothic", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpar.Location = new System.Drawing.Point(0, 287);
+            this.btnLimpar.Location = new System.Drawing.Point(0, 0);
             this.btnLimpar.Name = "btnLimpar";
-            this.btnLimpar.Size = new System.Drawing.Size(148, 45);
-            this.btnLimpar.TabIndex = 14;
+            this.btnLimpar.Size = new System.Drawing.Size(73, 45);
+            this.btnLimpar.TabIndex = 15;
             this.btnLimpar.Text = "Limpar Lista";
             this.btnLimpar.UseVisualStyleBackColor = false;
             this.btnLimpar.Click += new System.EventHandler(this.BtnLimpar_Click);
             // 
-            // panel6
+            // button1
             // 
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.Location = new System.Drawing.Point(0, 284);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(148, 3);
-            this.panel6.TabIndex = 15;
+            this.button1.BackColor = System.Drawing.Color.LightBlue;
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Yu Gothic", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(0, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(73, 45);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "Atualizar Lista";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // Form1
             // 
@@ -325,6 +375,9 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPecas)).EndInit();
+            this.panel7.ResumeLayout(false);
+            this.panel8.ResumeLayout(false);
+            this.panel9.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -349,8 +402,12 @@
         private System.Windows.Forms.Button btnSair;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.DataGridView dgvPecas;
-        private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Button btnLimpar;
     }
 }
 

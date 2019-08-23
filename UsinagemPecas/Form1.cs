@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -14,7 +15,11 @@ namespace UsinagemPecas
     {
 
         int CodigoRegistro = 0;
+        int Tempo = 0;
+        string CodigoPeca = string.Empty;
+        DateTime Data;
         List<Pecas> listaPecas = new List<Pecas>();
+        //Thread t;
 
         public Form1()
         {
@@ -27,21 +32,26 @@ namespace UsinagemPecas
         {
             string CodigoUm = "XYq24";
 
-            CodigoRegistro++;
-            listaPecas.Add(new Pecas(CodigoRegistro, CodigoUm, DateTime.Now, DateTime.Now));
+            Tempo = 24;
+            CodigoPeca = CodigoUm;
+            Data = DateTime.Now;
 
-            AtualizaGrid(listaPecas);
+            UsinarPeca();
 
+            //AtualizaGrid(listaPecas);
         }
 
         private void BtnPecaDois_Click(object sender, EventArgs e)
         {
             var CodigoDois = "QSs12";
 
-            CodigoRegistro++;
-            listaPecas.Add(new Pecas(CodigoRegistro, CodigoDois, DateTime.Now, DateTime.Now));
+            Tempo = 12;
+            CodigoPeca = CodigoDois;
+            Data = DateTime.Now;
 
-            AtualizaGrid(listaPecas);
+            UsinarPeca();
+
+            //AtualizaGrid(listaPecas);
 
         }
 
@@ -49,10 +59,13 @@ namespace UsinagemPecas
         {
             var CodigoTres = "WWz43";
 
-            CodigoRegistro++;
-            listaPecas.Add(new Pecas(CodigoRegistro, CodigoTres, DateTime.Now, DateTime.Now));
+            Tempo = 43;
+            CodigoPeca = CodigoTres;
+            Data = DateTime.Now;
 
-            AtualizaGrid(listaPecas);
+            UsinarPeca();
+
+            //AtualizaGrid(listaPecas);
 
         }
 
@@ -60,10 +73,13 @@ namespace UsinagemPecas
         {
             var CodigoQuatro = "ACb33";
 
-            CodigoRegistro++;
-            listaPecas.Add(new Pecas(CodigoRegistro, CodigoQuatro, DateTime.Now, DateTime.Now));
+            Tempo = 33;
+            CodigoPeca = CodigoQuatro;
+            Data = DateTime.Now;
 
-            AtualizaGrid(listaPecas);
+            UsinarPeca();
+
+            //AtualizaGrid(listaPecas);
 
         }
 
@@ -71,10 +87,13 @@ namespace UsinagemPecas
         {
             var CodigoCinco = "KIm02";
 
-            CodigoRegistro++;
-            listaPecas.Add(new Pecas(CodigoRegistro, CodigoCinco, DateTime.Now, DateTime.Now));
+            Tempo = 02;
+            CodigoPeca = CodigoCinco;
+            Data = DateTime.Now;
 
-            AtualizaGrid(listaPecas);
+            UsinarPeca();
+
+            //AtualizaGrid(listaPecas);
 
         }
 
@@ -115,5 +134,31 @@ namespace UsinagemPecas
             listaPecas.Clear();
             AtualizaGrid(listaPecas);
         }
+
+        private void UsinarPeca()
+        {
+            var t = new Thread(NovaThread);
+            t.Start();
+
+            //AtualizaGrid(listaPecas);
+        }
+
+        private void NovaThread()
+        {
+            var CodPeca = CodigoPeca;
+            var DataInicio = Data;
+            var TempoUsinagem = Tempo;
+
+            Thread.Sleep((TempoUsinagem * 1000));
+
+            CodigoRegistro++;
+            listaPecas.Add(new Pecas(CodigoRegistro, CodPeca, DataInicio.ToString("dd/MM/yyyy hh:mm:ss tt"), DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss tt")));
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            AtualizaGrid(listaPecas);
+        }
+
     }
 }
