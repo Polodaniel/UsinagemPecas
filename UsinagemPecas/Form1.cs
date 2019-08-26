@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -50,5 +51,17 @@ namespace UsinagemPecas
         {
             this.Close();
         }
+
+        //primeiro cria o metodo  depois que instancia o metodo
+        //instanciando uma thred e recebe por parametro um inteiro (ver exemplo)
+        // assim que acabar o tempo exibir uma MessageBox.Show(); 
+
+        private static void NovaThread(int tempo, DateTime dataHora)
+        {
+            Thread.Sleep(2000);
+        }
+
+
+
     }
 }
