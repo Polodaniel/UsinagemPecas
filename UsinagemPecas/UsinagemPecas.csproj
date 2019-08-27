@@ -57,6 +57,7 @@
     <Compile Include="Peca.cs" />
     <Compile Include="PecaEnum.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Torno.cs" />
     <EmbeddedResource Include="Form1.resx">

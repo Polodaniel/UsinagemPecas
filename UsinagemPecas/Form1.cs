@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading;
@@ -65,8 +64,15 @@ namespace UsinagemPecas
 
         private void BtnSair_Click(object sender, EventArgs e)
         {
-            Torno.DesligarTorno();
-            this.Close();
+            if (!Torno.FilaFabricacao.Any() && Torno.PecaEmFabricacao == null)
+            {
+                Torno.DesligarTorno();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Existe(em) peça(s) em produção, aguarde o termino da(s) peça(s) para poder fechar a aplicação.");
+            }
         }
 
         private void BtnLimpar_Click(object sender, EventArgs e)
