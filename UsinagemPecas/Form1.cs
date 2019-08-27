@@ -32,7 +32,7 @@ namespace UsinagemPecas
         {
             string CodigoUm = "XYq24";
 
-            Tempo = 24;
+            Tempo = ColetaTempo(CodigoUm);
             CodigoPeca = CodigoUm;
             Data = DateTime.Now;
 
@@ -45,7 +45,7 @@ namespace UsinagemPecas
         {
             var CodigoDois = "QSs12";
 
-            Tempo = 12;
+            Tempo = ColetaTempo(CodigoDois);
             CodigoPeca = CodigoDois;
             Data = DateTime.Now;
 
@@ -59,7 +59,7 @@ namespace UsinagemPecas
         {
             var CodigoTres = "WWz43";
 
-            Tempo = 43;
+            Tempo = ColetaTempo(CodigoTres);
             CodigoPeca = CodigoTres;
             Data = DateTime.Now;
 
@@ -73,7 +73,7 @@ namespace UsinagemPecas
         {
             var CodigoQuatro = "ACb33";
 
-            Tempo = 33;
+            Tempo = ColetaTempo(CodigoQuatro);
             CodigoPeca = CodigoQuatro;
             Data = DateTime.Now;
 
@@ -87,7 +87,7 @@ namespace UsinagemPecas
         {
             var CodigoCinco = "KIm02";
 
-            Tempo = 02;
+            Tempo = ColetaTempo(CodigoCinco);
             CodigoPeca = CodigoCinco;
             Data = DateTime.Now;
 
@@ -158,6 +158,11 @@ namespace UsinagemPecas
         private void Button1_Click(object sender, EventArgs e)
         {
             AtualizaGrid(listaPecas);
+        }
+
+        private int ColetaTempo(string Codigo)
+        {
+            return Convert.ToInt32(Codigo.Substring(3,2));
         }
 
     }
