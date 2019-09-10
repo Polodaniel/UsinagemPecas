@@ -13,19 +13,45 @@ namespace UsinagemPecas
 {
     public partial class Form1 : Form
     {
+
+        int CodigoRegistro = 0;
+        int Tempo = 0;
+        string CodigoPeca = string.Empty;
+        DateTime Data;
+        List<Pecas> listaPecas = new List<Pecas>();
+        //Thread t;
+
         public Form1()
         {
             InitializeComponent();
+
+            AtualizaGrid(listaPecas);
         }
 
         private void BtnPecaUm_Click(object sender, EventArgs e)
         {
-            var CodigoUm = "XYq24";
+            string CodigoUm = "XYq24";
+
+            Tempo = 24;
+            CodigoPeca = CodigoUm;
+            Data = DateTime.Now;
+
+            UsinarPeca();
+
+            //AtualizaGrid(listaPecas);
         }
 
         private void BtnPecaDois_Click(object sender, EventArgs e)
         {
             var CodigoDois = "QSs12";
+
+            Tempo = 12;
+            CodigoPeca = CodigoDois;
+            Data = DateTime.Now;
+
+            UsinarPeca();
+
+            //AtualizaGrid(listaPecas);
 
         }
 
@@ -33,17 +59,41 @@ namespace UsinagemPecas
         {
             var CodigoTres = "WWz43";
 
+            Tempo = 43;
+            CodigoPeca = CodigoTres;
+            Data = DateTime.Now;
+
+            UsinarPeca();
+
+            //AtualizaGrid(listaPecas);
+
         }
 
         private void BtnPecaQuatro_Click(object sender, EventArgs e)
         {
             var CodigoQuatro = "ACb33";
 
+            Tempo = 33;
+            CodigoPeca = CodigoQuatro;
+            Data = DateTime.Now;
+
+            UsinarPeca();
+
+            //AtualizaGrid(listaPecas);
+
         }
 
         private void BtnPecaCinco_Click(object sender, EventArgs e)
         {
             var CodigoCinco = "KIm02";
+
+            Tempo = 02;
+            CodigoPeca = CodigoCinco;
+            Data = DateTime.Now;
+
+            UsinarPeca();
+
+            //AtualizaGrid(listaPecas);
 
         }
 
@@ -52,16 +102,63 @@ namespace UsinagemPecas
             this.Close();
         }
 
-        //primeiro cria o metodo  depois que instancia o metodo
-        //instanciando uma thred e recebe por parametro um inteiro (ver exemplo)
-        // assim que acabar o tempo exibir uma MessageBox.Show(); 
-
-        private static void NovaThread(int tempo, DateTime dataHora)
+        private void AtualizaGrid(List<Pecas> listaPecas)
         {
-            Thread.Sleep(2000);
+            dgvPecas.DataSource = null;
+            dgvPecas.Rows.Clear();
+            dgvPecas.Columns.Clear();
+            dgvPecas.Refresh();
+
+            if (listaPecas.Count > 0 || Equals(listaPecas, null))
+            {
+                dgvPecas.DataSource = listaPecas;
+
+                dgvPecas.Columns[00].Width = 50;
+                dgvPecas.Columns[00].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                dgvPecas.Columns[00].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+                dgvPecas.Columns[01].Width = 153;
+                dgvPecas.Columns[02].Width = 215;
+                dgvPecas.Columns[03].Width = 215;
+            }
+            else
+            {
+                dgvPecas.Columns.Add("Peças", "Peças");
+                dgvPecas.Rows.Add("Sem Nenhum Peça Usinada !");
+                dgvPecas.Columns[00].Width = 633;
+            }
         }
 
+        private void BtnLimpar_Click(object sender, EventArgs e)
+        {
+            listaPecas.Clear();
+            AtualizaGrid(listaPecas);
+        }
 
+        private void UsinarPeca()
+        {
+            var t = new Thread(NovaThread);
+            t.Start();
+
+            //AtualizaGrid(listaPecas);
+        }
+
+        private void NovaThread()
+        {
+            var CodPeca = CodigoPeca;
+            var DataInicio = Data;
+            var TempoUsinagem = Tempo;
+
+            Thread.Sleep((TempoUsinagem * 1000));
+
+            CodigoRegistro++;
+            listaPecas.Add(new Pecas(CodigoRegistro, CodPeca, DataInicio.ToString("dd/MM/yyyy hh:mm:ss tt"), DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss tt")));
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            AtualizaGrid(listaPecas);
+        }
 
     }
 }
